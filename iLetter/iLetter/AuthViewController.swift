@@ -20,7 +20,7 @@ class AuthViewController: UIViewController {
     
     let emailButton = UIButton(title: "Email", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
     
-    let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .buttonRed(), isShadow: true)
+    let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .buttonGreen(), isShadow: true)
 
     
     override func viewDidLoad() {
@@ -29,6 +29,12 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
     }
+}
+
+
+//MARK: Setup constraints
+
+extension AuthViewController{
     
     private func setupConstraints(){
         
@@ -36,7 +42,7 @@ class AuthViewController: UIViewController {
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
         let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
         
-        let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spacing: 40)
+        let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spacing: 50)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,13 +51,13 @@ class AuthViewController: UIViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 120),
+            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 80),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
@@ -60,7 +66,7 @@ class AuthViewController: UIViewController {
 }
 
 
-//MARK: SiftUI
+//MARK: SwiftUI
 //Method for Canvas
 
 import SwiftUI
