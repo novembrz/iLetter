@@ -51,9 +51,11 @@ extension SignUpViewController{
         let confirmPasswordStackView = UIStackView(arrangedSubviews: [confirmPasswordLabel, confirmPasswordTF], axis: .vertical, spacing: 2)
         
         signupButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        loginButton.contentHorizontalAlignment = .leading //чтобы кнопка прилегала к лейблу
         
         let stackView = UIStackView(arrangedSubviews: [emailStackView, passwordStackView, confirmPasswordStackView, signupButton], axis: .vertical, spacing: 40)
-        let buttonStackView = UIStackView(arrangedSubviews: [alreadyLabel, loginButton], axis: .horizontal, spacing: -1)
+        let buttonStackView = UIStackView(arrangedSubviews: [alreadyLabel, loginButton], axis: .horizontal, spacing: 10)
+        buttonStackView.alignment = .firstBaseline //чтобы кнопка прилегала к лейблу
         
         helloLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,18 +66,18 @@ extension SignUpViewController{
         view.addSubview(buttonStackView)
         
         NSLayoutConstraint.activate([
-            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
             helloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 130),
+            stackView.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 110),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
         NSLayoutConstraint.activate([
-            buttonStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 110),
+            buttonStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 120),
             buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
