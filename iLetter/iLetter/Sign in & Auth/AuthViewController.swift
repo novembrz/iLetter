@@ -18,7 +18,7 @@ class AuthViewController: UIViewController {
     
     let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
     
-    let emailButton = UIButton(title: "Email", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
+    let emailButton = UIButton(title: "Email", backgroundColor: .buttonGreen(), titleColor: .white, isShadow: false)
     
     let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .buttonGreen(), isShadow: true)
 

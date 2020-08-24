@@ -21,7 +21,7 @@ class SetupProfileViewController: UIViewController {
     let nameTF = OneLineTextField(font: .avenir20())
     let aboutTF = OneLineTextField(font: .avenir20())
     
-    let lettersButton = UIButton(title: "Go to letters!", backgroundColor: .buttonDark(), titleColor: .buttonWhite(), isShadow: false)
+    let lettersButton = UIButton(title: "Go to letters!", backgroundColor: .buttonGreen(), titleColor: .buttonWhite(), isShadow: false)
     let sexSegmented = UISegmentedControl(first: "Man", second: "Woman")
 
     
