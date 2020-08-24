@@ -32,4 +32,17 @@ extension UIButton {
         }
 
     }
+    
+    func setGoogleIcon() {
+        
+        let googleLogo = UIImageView(image: #imageLiteral(resourceName: "googleLogo"), contentMode: .scaleAspectFit)
+        googleLogo.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(googleLogo)
+        
+        NSLayoutConstraint.activate([
+            googleLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+            googleLogo.topAnchor.constraint(equalTo: self.topAnchor, constant: 21)
+        ])
+        
+    }
 }

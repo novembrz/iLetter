@@ -30,6 +30,8 @@ class LoginViewController: UIViewController {
 
         view.backgroundColor = .white
         
+        googleButton.setGoogleIcon()
+        
         signupButton.setTitle("Sign up", for: .normal)
         signupButton.setTitleColor(.buttonGreen(), for: .normal)
         signupButton.titleLabel?.font = .avenir20()

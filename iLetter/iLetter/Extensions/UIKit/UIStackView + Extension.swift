@@ -1,5 +1,5 @@
 //
-//  UIStackView + Extensions.swift
+//  UIStackView + Extension.swift
 //  iLetter
 //
 //  Created by Дарья on 23.08.2020.
