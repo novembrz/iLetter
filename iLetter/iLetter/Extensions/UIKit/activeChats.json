@@ -1,0 +1,33 @@
+[
+    {
+        "username": "Драко Малфой",
+        "userImageString": "Малфой",
+        "lastMessage": "Are you a mudblood?",
+        "id": 1
+    },
+    {
+        "username": "Харли Квин",
+        "userImageString": "Харли",
+        "lastMessage": "Где мой пудинг?",
+        "id": 2
+    },
+    {
+        "username": "Морфеус",
+        "userImageString": "Морфиус",
+        "lastMessage": "Red or blue?",
+        "id": 3
+    },
+    {
+        "username": "Фаина Раневская",
+        "userImageString": "Раневская",
+        "lastMessage": "Все сбудется, стоит только расхотеть",
+        "id": 4
+    },
+    {
+        "username": "Джаред Лето",
+        "userImageString": "Джаред",
+        "lastMessage": "I want you, baby. Come to Hollywood",
+        "id": 5
+    }
+]
+

@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Зоя Кравиц",
+        "userImageString": "Зоя",
+        "lastMessage": "Are you going to ride a bike today?",
+        "id": 6
+    },
+    {
+        "username": "Рик Санчез",
+        "userImageString": "Рик",
+        "lastMessage": "Wow!",
+        "id": 7
+    },
+    {
+        "username": "Шерил Блоссом",
+        "userImageString": "Шерил",
+        "lastMessage": "Hello!",
+        "id": 8
+    },
+    {
+        "username": "Карл Лагерфельд",
+        "userImageString": "Лагерфельд",
+        "lastMessage": "Nice to meet you",
+        "id": 9
+    },
+    {
+        "username": "Баба Нина",
+        "userImageString": "Слепая",
+        "lastMessage": "How much?",
+        "id": 10
+    }
+]
