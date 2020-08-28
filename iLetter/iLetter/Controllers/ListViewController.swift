@@ -8,13 +8,40 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+struct LetterChat: Hashable {
+    var username: String
+    var userImage: UIImage
+    var lastMessage: String
+    var id = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: LetterChat, rhs: LetterChat) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
 
+class ListViewController: UIViewController {
+    
+    enum Section: Int, CaseIterable{
+        case activeChat
+    }
+    
+    var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, LetterChat>?
+    
+    let activeChats: [LetterChat] = [LetterChat(username: "Драко Малфой", userImage: #imageLiteral(resourceName: "Малфой"), lastMessage: "Are you a mudblood?"), LetterChat(username: "Харли Квин", userImage: #imageLiteral(resourceName: "Харли"), lastMessage: "Где мой пудинг?"), LetterChat(username: "Морфеус", userImage: #imageLiteral(resourceName: "Морфиус"), lastMessage: "Red or blue?"), LetterChat(username: "Фаина Раневская", userImage: #imageLiteral(resourceName: "Раневская"), lastMessage: "Все сбудется, стоит только расхотеть")]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupSearchBar()
         setupCollectionView()
+        createDataSource()
+        reloadData()
     }
     
     
@@ -35,7 +62,7 @@ class ListViewController: UIViewController {
     
     private func setupCollectionView(){
         
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionView.backgroundColor = .buttonWhite()
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
@@ -67,7 +94,36 @@ class ListViewController: UIViewController {
         
         return layout
     }
+    
+    
+    private func createDataSource(){ //создаем дату
+        
+        dataSource = UICollectionViewDiffableDataSource<Section, LetterChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, letter) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.row) else {
+                fatalError("Unknown section kind")
+            }
+            
+            switch section {
+                
+            case .activeChat:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+                cell.backgroundColor = .systemBlue
+                return cell
+            }
+        })
+    }
+    
+    
+    private func reloadData(){
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section, LetterChat>()
+        dataSource?.apply(snapshot, animatingDifferences: true)
+        snapshot.appendSections([.activeChat])
+        snapshot.appendItems(activeChats, toSection: .activeChat)
+    }
+    
 }
+
 
 
 //MARK: UISearchBarDelegate
