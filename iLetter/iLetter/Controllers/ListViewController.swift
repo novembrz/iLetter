@@ -14,11 +14,13 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
 
         setupSearchBar()
-        view.backgroundColor = .buttonWhite()
+        setupCollectionView()
     }
     
+    
     private func setupSearchBar() {
-        navigationController?.navigationBar.backgroundColor = .buttonWhite()
+        
+        navigationController?.navigationBar.barTintColor = .buttonWhite()
         navigationController?.navigationBar.shadowImage = UIImage()
         
         let search = UISearchController(searchResultsController: nil)
@@ -29,17 +31,41 @@ class ListViewController: UIViewController {
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.delegate = self
     }
-
-}
-
-
-//MARK: Set up Constraints
-
-extension ListViewController {
     
-    private func setupConstraints(){
+    
+    private func setupCollectionView(){
         
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        collectionView.backgroundColor = .buttonWhite()
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
+        view.addSubview(collectionView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    
+    private func createCompositionalLayout() -> UICollectionViewLayout{
+        
+        let layout = UICollectionViewCompositionalLayout{ (senctionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(84))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+            group.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 8, trailing: 0)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+            
+            return section
+        }
+        
+        return layout
     }
 }
 
@@ -49,6 +75,24 @@ extension ListViewController {
 extension ListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+
+//MARK: UICollectionView Delegate & DataSource
+
+extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = .blue
+        
+        return cell
     }
 }
 
