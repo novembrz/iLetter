@@ -67,8 +67,8 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .buttonWhite()
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "waitingCell")
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
         
         view.addSubview(collectionView)
     }
@@ -92,6 +92,14 @@ class ListViewController: UIViewController {
 
 extension ListViewController{
     
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: LetterChat, for indexPath: IndexPath) -> T {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)") }
+        cell.configure(with: value)
+        
+        return cell
+    }
+    
     private func createDataSource(){
         
         dataSource = UICollectionViewDiffableDataSource<Section, LetterChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
@@ -100,16 +108,11 @@ extension ListViewController{
             fatalError("Unknown section kind")
         }
             
-            switch section{
-                case .activeChat:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-                cell.backgroundColor = .systemRed
-                return cell
-                
+            switch section {
+            case .activeChat:
+                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChat:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "waitingCell", for: indexPath)
-                cell.backgroundColor = .orange
-                return cell
+                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
     }

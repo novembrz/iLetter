@@ -1,30 +1,30 @@
 [
     {
-        "username": "Зоя Кравиц",
+        "username": "Zoe Kravitz",
         "userImageString": "Зоя",
         "lastMessage": "Are you going to ride a bike today?",
         "id": 6
     },
     {
-        "username": "Рик Санчез",
+        "username": "Rick Sanchez",
         "userImageString": "Рик",
         "lastMessage": "Wow!",
         "id": 7
     },
     {
-        "username": "Шерил Блоссом",
+        "username": "Cheryl Blossom",
         "userImageString": "Шерил",
         "lastMessage": "Hello!",
         "id": 8
     },
     {
-        "username": "Карл Лагерфельд",
-        "userImageString": "Лагерфельд",
+        "username": "Faina Ranevskaya",
+        "userImageString": "Раневская",
         "lastMessage": "Nice to meet you",
         "id": 9
     },
     {
-        "username": "Баба Нина",
+        "username": "Baba Nina",
         "userImageString": "Слепая",
         "lastMessage": "How much?",
         "id": 10
