@@ -24,6 +24,7 @@
 		C2589CCB24F2B4BE00ED3A5C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2589CCA24F2B4BE00ED3A5C /* SignUpViewController.swift */; };
 		C263B47824F3EB7E00E22835 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263B47724F3EB7E00E22835 /* SetupProfileViewController.swift */; };
 		C263B47A24F3EC2400E22835 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263B47924F3EC2400E22835 /* AddPhotoView.swift */; };
+		C263F25E24FBB3D300D93808 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F25D24FBB3D300D93808 /* SectionHeader.swift */; };
 		C299A11024F2B7D30042A502 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299A10F24F2B7D30042A502 /* OneLineTextField.swift */; };
 		C2A1DC1C24F3FBCE00E697AD /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1DC1B24F3FBCE00E697AD /* SegmentedControl + Extension.swift */; };
 		C2A250D324F280BB00231064 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A250D224F280BB00231064 /* UIButton + Extension.swift */; };
@@ -57,6 +58,7 @@
 		C2589CCA24F2B4BE00ED3A5C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C263B47724F3EB7E00E22835 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		C263B47924F3EC2400E22835 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		C263F25D24FBB3D300D93808 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		C299A10F24F2B7D30042A502 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		C2A1DC1B24F3FBCE00E697AD /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		C2A250D224F280BB00231064 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C21535D724F4291800B3A262 /* MainTabBarController.swift */,
+				C263F25D24FBB3D300D93808 /* SectionHeader.swift */,
 				C21535D324F4290000B3A262 /* ListViewController.swift */,
 				C21535D524F4290B00B3A262 /* PeopleViewController.swift */,
 				C2CCB1F124FAB78A00965415 /* Cells */,
@@ -263,6 +266,7 @@
 			files = (
 				C21535D424F4290000B3A262 /* ListViewController.swift in Sources */,
 				C299A11024F2B7D30042A502 /* OneLineTextField.swift in Sources */,
+				C263F25E24FBB3D300D93808 /* SectionHeader.swift in Sources */,
 				C2589CCB24F2B4BE00ED3A5C /* SignUpViewController.swift in Sources */,
 				C2CCB1ED24FAB73D00965415 /* SelfConfiguringCell.swift in Sources */,
 				C236ED7E24F0392B00FC7C41 /* AuthViewController.swift in Sources */,

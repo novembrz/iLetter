@@ -18,7 +18,7 @@ class PeopleViewController: UIViewController {
     }
     
     private func setupSearchBar() {
-        navigationController?.navigationBar.backgroundColor = .buttonWhite()
+        navigationController?.navigationBar.barTintColor = .buttonWhite()
         navigationController?.navigationBar.shadowImage = UIImage()
         
         let search = UISearchController(searchResultsController: nil)
