@@ -9,6 +9,7 @@
 import UIKit
 
 class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
+    
     static var reuseId: String = "ActiveChatCell"
     
     
@@ -26,11 +27,12 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
         self.clipsToBounds = true
     }
     
-    func configure(with value: LetterChat) {
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat: LetterChat = value as? LetterChat else { return }
         
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendName.text = value.username
-        lastMessage.text = value.lastMessage
+        friendImageView.image = UIImage(named: chat.userImageString)
+        friendName.text = chat.username
+        lastMessage.text = chat.lastMessage
         
         friendImageView.contentMode = .scaleAspectFill
         friendImageView.clipsToBounds = true

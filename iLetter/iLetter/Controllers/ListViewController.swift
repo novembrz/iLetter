@@ -8,21 +8,6 @@
 
 import UIKit
 
-struct LetterChat: Hashable, Decodable {
-    var username: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: LetterChat, rhs: LetterChat) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class ListViewController: UIViewController {
     
     enum Section: Int, CaseIterable{
@@ -103,14 +88,6 @@ class ListViewController: UIViewController {
 
 extension ListViewController{
     
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: LetterChat, for indexPath: IndexPath) -> T {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)") }
-        cell.configure(with: value)
-        
-        return cell
-    }
-    
     private func createDataSource(){
         
         dataSource = UICollectionViewDiffableDataSource<Section, LetterChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
@@ -121,9 +98,9 @@ extension ListViewController{
             
             switch section {
             case .activeChat:
-                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChat:
-                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
             
         })

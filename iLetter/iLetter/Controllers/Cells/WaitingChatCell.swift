@@ -15,16 +15,17 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
+        backgroundColor = .buttonGreen()
         
         self.layer.cornerRadius = 4
         self.clipsToBounds = true
         setupConstraints()
     }
     
-    func configure(with value: LetterChat) {
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat: LetterChat = value as? LetterChat else { return }
         
-        friendImageView.image = UIImage(named: value.userImageString)
+        friendImageView.image = UIImage(named: chat.userImageString)
         friendImageView.contentMode = .scaleAspectFill
         friendImageView.clipsToBounds = true
     }

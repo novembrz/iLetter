@@ -1,0 +1,52 @@
+[
+    {
+        "username": "Jim Carrey",
+        "avatarStringURL": "Джим",
+        "id": 1
+    },
+    {
+        "username": "Zoe Kravitz",
+        "avatarStringURL": "Зоя",
+        "id": 2
+    },
+    {
+        "username": "Baba Nina",
+        "avatarStringURL": "Слепая",
+        "id": 3
+    },
+    {
+        "username": "Cheryl Blossom",
+        "avatarStringURL": "Шерил",
+        "id": 4
+    },
+    {
+        "username": "6ix9ine",
+        "avatarStringURL": "6ix9ine",
+        "id": 5
+    },
+    {
+        "username": "Rick Sanchez",
+        "avatarStringURL": "Рик",
+        "id": 6
+    },
+    {
+        "username": "Faina Ranevskaya",
+        "avatarStringURL": "Раневская",
+        "id": 7
+    },
+    {
+        "username": "Uma Turman",
+        "avatarStringURL": "Турман",
+        "id": 8
+    },
+    {
+        "username": "Jaden Smith",
+        "avatarStringURL": "Джейден",
+        "id": 9
+    },
+    {
+        "username": "Galina Sergeevna",
+        "avatarStringURL": "Галина",
+        "id": 10
+    }
+]
