@@ -37,6 +37,11 @@ class SignUpViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.signupButton.applyGradients(cornerRadius: 10)
+    }
+    
 }
 
 

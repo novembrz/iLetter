@@ -18,7 +18,7 @@ class AuthViewController: UIViewController {
     
     let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
     
-    let emailButton = UIButton(title: "Email", backgroundColor: .buttonGreen(), titleColor: .white, isShadow: false)
+    let emailButton = UIButton(title: "Email", backgroundColor: .buttonWhite(), titleColor: .white, isShadow: false)
     
     let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .buttonGreen(), isShadow: true)
 
@@ -29,6 +29,11 @@ class AuthViewController: UIViewController {
         googleButton.setGoogleIcon()
         view.backgroundColor = .white
         setupConstraints()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.emailButton.applyGradients(cornerRadius: 10)
     }
 }
 

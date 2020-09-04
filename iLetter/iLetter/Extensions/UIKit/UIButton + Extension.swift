@@ -15,7 +15,7 @@ extension UIButton {
                      font: UIFont? = .avenir20(),
                      backgroundColor: UIColor,
                      titleColor: UIColor,
-                     cornerRadius: CGFloat = 4,
+                     cornerRadius: CGFloat = 10,
                      isShadow: Bool){
         self.init(type: .system)
         
@@ -23,6 +23,8 @@ extension UIButton {
         self.setTitleColor(titleColor, for: .normal)
         self.backgroundColor = backgroundColor
         self.titleLabel?.font = font
+        
+        self.layer.cornerRadius = cornerRadius
         
         if isShadow{
             self.layer.shadowColor = UIColor.black.cgColor

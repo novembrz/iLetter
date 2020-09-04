@@ -31,6 +31,11 @@ class SetupProfileViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.lettersButton.applyGradients(cornerRadius: 10)
+    }
 
 }
 

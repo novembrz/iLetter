@@ -18,6 +18,7 @@
 		C236ED7E24F0392B00FC7C41 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7D24F0392B00FC7C41 /* AuthViewController.swift */; };
 		C236ED8324F0392C00FC7C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C236ED8224F0392C00FC7C41 /* Assets.xcassets */; };
 		C236ED8624F0392C00FC7C41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C236ED8424F0392C00FC7C41 /* LaunchScreen.storyboard */; };
+		C2388AB625023AF900952DBC /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2388AB525023AF900952DBC /* ChatRequestViewController.swift */; };
 		C23B142624F9445900C03635 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = C23B142524F9445900C03635 /* activeChats.json */; };
 		C23B142824F9446200C03635 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = C23B142724F9446200C03635 /* waitingChats.json */; };
 		C23B142A24F9448400C03635 /* Bundle & Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23B142924F9448400C03635 /* Bundle & Decodable.swift */; };
@@ -30,6 +31,9 @@
 		C2814D9B24FECDF600B4F9B8 /* LetterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2814D9A24FECDF600B4F9B8 /* LetterUser.swift */; };
 		C2814D9D24FEDAFF00B4F9B8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2814D9C24FEDAFF00B4F9B8 /* UserCell.swift */; };
 		C2814D9F24FEDC9100B4F9B8 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2814D9E24FEDC9100B4F9B8 /* UIViewController + Extension.swift */; };
+		C29316CE25010C9500AF1B63 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29316CD25010C9500AF1B63 /* ProfileViewController.swift */; };
+		C29316D025011ACB00AF1B63 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29316CF25011ACA00AF1B63 /* MessageTextField.swift */; };
+		C29316D22501222000AF1B63 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29316D12501222000AF1B63 /* UIView + Extension.swift */; };
 		C299A11024F2B7D30042A502 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299A10F24F2B7D30042A502 /* OneLineTextField.swift */; };
 		C2A1DC1C24F3FBCE00E697AD /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1DC1B24F3FBCE00E697AD /* SegmentedControl + Extension.swift */; };
 		C2A250D324F280BB00231064 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A250D224F280BB00231064 /* UIButton + Extension.swift */; };
@@ -57,6 +61,7 @@
 		C236ED8224F0392C00FC7C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C236ED8524F0392C00FC7C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C236ED8724F0392C00FC7C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2388AB525023AF900952DBC /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		C23B142524F9445900C03635 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		C23B142724F9446200C03635 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		C23B142924F9448400C03635 /* Bundle & Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle & Decodable.swift"; sourceTree = "<group>"; };
@@ -69,6 +74,9 @@
 		C2814D9A24FECDF600B4F9B8 /* LetterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterUser.swift; sourceTree = "<group>"; };
 		C2814D9C24FEDAFF00B4F9B8 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C2814D9E24FEDC9100B4F9B8 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		C29316CD25010C9500AF1B63 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C29316CF25011ACA00AF1B63 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
+		C29316D12501222000AF1B63 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		C299A10F24F2B7D30042A502 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		C2A1DC1B24F3FBCE00E697AD /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		C2A250D224F280BB00231064 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
@@ -110,6 +118,8 @@
 				C21535D724F4291800B3A262 /* MainTabBarController.swift */,
 				C21535D524F4290B00B3A262 /* PeopleViewController.swift */,
 				C21535D324F4290000B3A262 /* ListViewController.swift */,
+				C29316CD25010C9500AF1B63 /* ProfileViewController.swift */,
+				C2388AB525023AF900952DBC /* ChatRequestViewController.swift */,
 				C2814D9624FECDA800B4F9B8 /* Headers */,
 				C2CCB1F124FAB78A00965415 /* Cells */,
 			);
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A250D224F280BB00231064 /* UIButton + Extension.swift */,
+				C29316D12501222000AF1B63 /* UIView + Extension.swift */,
 				C2814D9E24FEDC9100B4F9B8 /* UIViewController + Extension.swift */,
 				C2A250DA24F28A4E00231064 /* UIImageView + Extension.swift */,
 				C2A250D824F2893400231064 /* UILabel + Extension.swift */,
@@ -196,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				C263B47924F3EC2400E22835 /* AddPhotoView.swift */,
+				C29316CF25011ACA00AF1B63 /* MessageTextField.swift */,
 				C20B827224F2945100D5967B /* ButtonFormView.swift */,
 				C299A10F24F2B7D30042A502 /* OneLineTextField.swift */,
 				C23B142924F9448400C03635 /* Bundle & Decodable.swift */,
@@ -306,14 +318,18 @@
 				C236ED7A24F0392B00FC7C41 /* AppDelegate.swift in Sources */,
 				C21535D624F4290C00B3A262 /* PeopleViewController.swift in Sources */,
 				C263B47824F3EB7E00E22835 /* SetupProfileViewController.swift in Sources */,
+				C29316D025011ACB00AF1B63 /* MessageTextField.swift in Sources */,
 				C236ED7C24F0392B00FC7C41 /* SceneDelegate.swift in Sources */,
 				C21535D824F4291800B3A262 /* MainTabBarController.swift in Sources */,
+				C29316CE25010C9500AF1B63 /* ProfileViewController.swift in Sources */,
 				C20B827524F29C2000D5967B /* UIStackView + Extension.swift in Sources */,
+				C2388AB625023AF900952DBC /* ChatRequestViewController.swift in Sources */,
 				C20B827324F2945100D5967B /* ButtonFormView.swift in Sources */,
 				C2A250D924F2893400231064 /* UILabel + Extension.swift in Sources */,
 				C2814D9924FECDD000B4F9B8 /* LetterChat.swift in Sources */,
 				C2CCB1F324FAB7B100965415 /* GradientView.swift in Sources */,
 				C2A250DB24F28A4E00231064 /* UIImageView + Extension.swift in Sources */,
+				C29316D22501222000AF1B63 /* UIView + Extension.swift in Sources */,
 				C23B142A24F9448400C03635 /* Bundle & Decodable.swift in Sources */,
 				C2A1DC1C24F3FBCE00E697AD /* SegmentedControl + Extension.swift in Sources */,
 				C2814D9D24FEDAFF00B4F9B8 /* UserCell.swift in Sources */,

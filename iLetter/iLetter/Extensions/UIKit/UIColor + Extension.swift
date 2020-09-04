@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     
     static func buttonGreen() -> UIColor {
-        return #colorLiteral(red: 0.4017933519, green: 0.6788546954, blue: 0.5675580709, alpha: 1)
+        return #colorLiteral(red: 0.2823529412, green: 0.8431372549, blue: 0.6509803922, alpha: 1)
     }
     
     static func buttonDark() -> UIColor {

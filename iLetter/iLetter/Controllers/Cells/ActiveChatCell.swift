@@ -44,6 +44,7 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
 }
 
 // MARK: - Setup constraints
+
 extension ActiveChatCell {
     private func setupConstraints() {
         
@@ -90,6 +91,7 @@ extension ActiveChatCell {
 }
 
 // MARK: - SwiftUI
+
 import SwiftUI
 
 struct ActiveChatProvider: PreviewProvider {
