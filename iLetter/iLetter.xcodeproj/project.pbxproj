@@ -14,9 +14,9 @@
 		C21535D624F4290C00B3A262 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21535D524F4290B00B3A262 /* PeopleViewController.swift */; };
 		C21535D824F4291800B3A262 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21535D724F4291800B3A262 /* MainTabBarController.swift */; };
 		C22AFECB24F2F1F500D30CC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AFECA24F2F1F500D30CC3 /* LoginViewController.swift */; };
+		C22CA3972502745700D890A8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CA3962502745700D890A8 /* AuthService.swift */; };
 		C236ED7A24F0392B00FC7C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7924F0392B00FC7C41 /* AppDelegate.swift */; };
 		C236ED7C24F0392B00FC7C41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7B24F0392B00FC7C41 /* SceneDelegate.swift */; };
-		C236ED7E24F0392B00FC7C41 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7D24F0392B00FC7C41 /* AuthViewController.swift */; };
 		C236ED8324F0392C00FC7C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C236ED8224F0392C00FC7C41 /* Assets.xcassets */; };
 		C236ED8624F0392C00FC7C41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C236ED8424F0392C00FC7C41 /* LaunchScreen.storyboard */; };
 		C2388AB625023AF900952DBC /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2388AB525023AF900952DBC /* ChatRequestViewController.swift */; };
@@ -47,6 +47,7 @@
 		C2CCB1F024FAB78300965415 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCB1EF24FAB78300965415 /* WaitingChatCell.swift */; };
 		C2CCB1F324FAB7B100965415 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CCB1F224FAB7B100965415 /* GradientView.swift */; };
 		C2E30E1C25025437009710C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2E30E1B25025437009710C5 /* GoogleService-Info.plist */; };
+		C2F151562502615C0088755D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F151552502615C0088755D /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,10 +58,10 @@
 		C21535D524F4290B00B3A262 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		C21535D724F4291800B3A262 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C22AFECA24F2F1F500D30CC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C22CA3962502745700D890A8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C236ED7624F0392B00FC7C41 /* iLetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C236ED7924F0392B00FC7C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C236ED7B24F0392B00FC7C41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C236ED7D24F0392B00FC7C41 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C236ED8224F0392C00FC7C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C236ED8524F0392C00FC7C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C236ED8724F0392C00FC7C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		C2CCB1EF24FAB78300965415 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		C2CCB1F224FAB7B100965415 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C2E30E1B25025437009710C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C2F151552502615C0088755D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C635A424D71761837DDBAACF /* Pods-iLetter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLetter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iLetter/Pods-iLetter.debug.xcconfig"; sourceTree = "<group>"; };
 		FB91664BD68FBE9DE2455A02 /* Pods-iLetter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iLetter.release.xcconfig"; path = "Pods/Target Support Files/Pods-iLetter/Pods-iLetter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +122,7 @@
 		C21535D224F428AD00B3A262 /* Sign in & Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C236ED7D24F0392B00FC7C41 /* AuthViewController.swift */,
+				C2F151552502615C0088755D /* AuthViewController.swift */,
 				C2589CCA24F2B4BE00ED3A5C /* SignUpViewController.swift */,
 				C22AFECA24F2F1F500D30CC3 /* LoginViewController.swift */,
 				C263B47724F3EB7E00E22835 /* SetupProfileViewController.swift */,
@@ -140,6 +142,15 @@
 				C2CCB1F124FAB78A00965415 /* Cells */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C22CA3982502746500D890A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C22CA3962502745700D890A8 /* AuthService.swift */,
+				C2814D9724FECDB900B4F9B8 /* Models */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C236ED6D24F0392B00FC7C41 = {
@@ -166,9 +177,9 @@
 				C236ED7924F0392B00FC7C41 /* AppDelegate.swift */,
 				C236ED7B24F0392B00FC7C41 /* SceneDelegate.swift */,
 				C236ED8424F0392C00FC7C41 /* LaunchScreen.storyboard */,
+				C22CA3982502746500D890A8 /* Services */,
 				C21535D924F42E2C00B3A262 /* Controllers */,
 				C21535D224F428AD00B3A262 /* Sign in & Auth */,
-				C2814D9724FECDB900B4F9B8 /* Models */,
 				C2CCB1EE24FAB74D00965415 /* Protocol */,
 				C2A250DE24F28C7800231064 /* Extensions */,
 				C2A250DD24F28C3100231064 /* Supporting files */,
@@ -388,7 +399,6 @@
 				C263F25E24FBB3D300D93808 /* SectionHeader.swift in Sources */,
 				C2589CCB24F2B4BE00ED3A5C /* SignUpViewController.swift in Sources */,
 				C2CCB1ED24FAB73D00965415 /* SelfConfiguringCell.swift in Sources */,
-				C236ED7E24F0392B00FC7C41 /* AuthViewController.swift in Sources */,
 				C2CCB1EB24FAB64600965415 /* ActiveChatCell.swift in Sources */,
 				C236ED7A24F0392B00FC7C41 /* AppDelegate.swift in Sources */,
 				C21535D624F4290C00B3A262 /* PeopleViewController.swift in Sources */,
@@ -406,6 +416,7 @@
 				C2A250DB24F28A4E00231064 /* UIImageView + Extension.swift in Sources */,
 				C29316D22501222000AF1B63 /* UIView + Extension.swift in Sources */,
 				C23B142A24F9448400C03635 /* Bundle & Decodable.swift in Sources */,
+				C2F151562502615C0088755D /* AuthViewController.swift in Sources */,
 				C2A1DC1C24F3FBCE00E697AD /* SegmentedControl + Extension.swift in Sources */,
 				C2814D9D24FEDAFF00B4F9B8 /* UserCell.swift in Sources */,
 				C2814D9F24FEDC9100B4F9B8 /* UIViewController + Extension.swift in Sources */,
@@ -414,6 +425,7 @@
 				C2814D9B24FECDF600B4F9B8 /* LetterUser.swift in Sources */,
 				C2A250D524F2843900231064 /* UIFont + Extension.swift in Sources */,
 				C263B47A24F3EC2400E22835 /* AddPhotoView.swift in Sources */,
+				C22CA3972502745700D890A8 /* AuthService.swift in Sources */,
 				C22AFECB24F2F1F500D30CC3 /* LoginViewController.swift in Sources */,
 				C2A250D324F280BB00231064 /* UIButton + Extension.swift in Sources */,
 			);

@@ -35,11 +35,28 @@ class SignUpViewController: UIViewController {
         loginButton.titleLabel?.font = .avenir20()
         
         setupConstraints()
+        
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.signupButton.applyGradients(cornerRadius: 10)
+    }
+    
+    @objc private func signupButtonTapped(){
+        print(#function)
+        
+        AuthService.shared.register(email: emailTF.text, password: passwordTF.text, confirfPassword: confirmPasswordTF.text) { (result) in
+            
+            switch result{
+            case .success(let user):
+                self.createAlert(with: "Successful!", message: "You are registered!")
+                print(user.email)
+            case .failure(let error):
+                self.createAlert(with: "Error!", message: error.localizedDescription)
+            }
+        }
     }
     
 }
@@ -114,3 +131,13 @@ struct SignUpVCProvider: PreviewProvider {
     }
 }
 
+extension UIViewController{
+    
+    func createAlert(with title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}

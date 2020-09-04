@@ -37,6 +37,19 @@ class LoginViewController: UIViewController {
         signupButton.titleLabel?.font = .avenir20()
         
         setupConstraints()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func loginButtonTapped() {
+        AuthService.shared.login(email: emailTF.text, password: passwordTF.text) { (result) in
+            switch result{
+            case .success(let user):
+                self.createAlert(with: "Successful!", message: "You are sign in!")
+                print(user.email)
+            case .failure(let error):
+                self.createAlert(with: "Error!", message: error.localizedDescription)
+            }
+        }
     }
     
 }
