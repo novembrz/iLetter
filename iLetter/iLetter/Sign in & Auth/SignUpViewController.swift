@@ -23,6 +23,8 @@ class SignUpViewController: UIViewController {
     
     let signupButton = UIButton(title: "Sign up", backgroundColor: .buttonGreen(), titleColor: .white, isShadow: false)
     let loginButton = UIButton()
+    
+    weak var delegate: AuthNavigatingDelegate?
 
     
     override func viewDidLoad() {
@@ -37,25 +39,35 @@ class SignUpViewController: UIViewController {
         setupConstraints()
         
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.signupButton.applyGradients(cornerRadius: 10)
     }
     
-    @objc private func signupButtonTapped(){
+    
+    @objc private func signupButtonTapped() {
         print(#function)
         
-        AuthService.shared.register(email: emailTF.text, password: passwordTF.text, confirfPassword: confirmPasswordTF.text) { (result) in
+        AuthService.shared.register(email: emailTF.text, password: passwordTF.text, confirmPassword: confirmPasswordTF.text) { (result) in
             
             switch result{
             case .success(let user):
-                self.createAlert(with: "Successful!", message: "You are registered!")
-                print(user.email)
+                self.createAlert(with: "Successful!", message: "You are registered!") {
+                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.createAlert(with: "Error!", message: error.localizedDescription)
             }
+        }
+    }
+    
+    @objc private func loginButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toLoginVC()
         }
     }
     
@@ -88,7 +100,7 @@ extension SignUpViewController{
         view.addSubview(buttonStackView)
         
         NSLayoutConstraint.activate([
-            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             helloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -99,7 +111,7 @@ extension SignUpViewController{
         ])
         
         NSLayoutConstraint.activate([
-            buttonStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 120),
+            buttonStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
             buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
@@ -128,16 +140,5 @@ struct SignUpVCProvider: PreviewProvider {
         func updateUIViewController(_ uiViewController: SignUpVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<SignUpVCProvider.ContainerView>) {
             
         }
-    }
-}
-
-extension UIViewController{
-    
-    func createAlert(with title: String, message: String){
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
     }
 }

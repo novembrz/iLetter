@@ -10,11 +10,14 @@
 		2BF9BBA8A329E9B501A94826 /* Pods_iLetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D691F9B1D6F3E01EF81638 /* Pods_iLetter.framework */; };
 		C20B827324F2945100D5967B /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B827224F2945100D5967B /* ButtonFormView.swift */; };
 		C20B827524F29C2000D5967B /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20B827424F29C2000D5967B /* UIStackView + Extension.swift */; };
+		C215324325029D01005DE306 /* AuthNavigatingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C215324225029D01005DE306 /* AuthNavigatingDelegate.swift */; };
 		C21535D424F4290000B3A262 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21535D324F4290000B3A262 /* ListViewController.swift */; };
 		C21535D624F4290C00B3A262 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21535D524F4290B00B3A262 /* PeopleViewController.swift */; };
 		C21535D824F4291800B3A262 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21535D724F4291800B3A262 /* MainTabBarController.swift */; };
 		C22AFECB24F2F1F500D30CC3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AFECA24F2F1F500D30CC3 /* LoginViewController.swift */; };
 		C22CA3972502745700D890A8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CA3962502745700D890A8 /* AuthService.swift */; };
+		C22CA39B2502883B00D890A8 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CA39A2502883B00D890A8 /* Validators.swift */; };
+		C22CA39D2502890900D890A8 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22CA39C2502890900D890A8 /* AuthError.swift */; };
 		C236ED7A24F0392B00FC7C41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7924F0392B00FC7C41 /* AppDelegate.swift */; };
 		C236ED7C24F0392B00FC7C41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C236ED7B24F0392B00FC7C41 /* SceneDelegate.swift */; };
 		C236ED8324F0392C00FC7C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C236ED8224F0392C00FC7C41 /* Assets.xcassets */; };
@@ -54,11 +57,14 @@
 		63D691F9B1D6F3E01EF81638 /* Pods_iLetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iLetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20B827224F2945100D5967B /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		C20B827424F29C2000D5967B /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		C215324225029D01005DE306 /* AuthNavigatingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigatingDelegate.swift; sourceTree = "<group>"; };
 		C21535D324F4290000B3A262 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C21535D524F4290B00B3A262 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		C21535D724F4291800B3A262 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C22AFECA24F2F1F500D30CC3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C22CA3962502745700D890A8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C22CA39A2502883B00D890A8 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		C22CA39C2502890900D890A8 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		C236ED7624F0392B00FC7C41 /* iLetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C236ED7924F0392B00FC7C41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C236ED7B24F0392B00FC7C41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,10 +153,19 @@
 		C22CA3982502746500D890A8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C22CA3962502745700D890A8 /* AuthService.swift */,
 				C2814D9724FECDB900B4F9B8 /* Models */,
+				C22CA3962502745700D890A8 /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C22CA3992502880F00D890A8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C22CA39A2502883B00D890A8 /* Validators.swift */,
+				C22CA39C2502890900D890A8 /* AuthError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C236ED6D24F0392B00FC7C41 = {
@@ -180,6 +195,7 @@
 				C22CA3982502746500D890A8 /* Services */,
 				C21535D924F42E2C00B3A262 /* Controllers */,
 				C21535D224F428AD00B3A262 /* Sign in & Auth */,
+				C22CA3992502880F00D890A8 /* Helpers */,
 				C2CCB1EE24FAB74D00965415 /* Protocol */,
 				C2A250DE24F28C7800231064 /* Extensions */,
 				C2A250DD24F28C3100231064 /* Supporting files */,
@@ -251,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				C2CCB1EC24FAB73D00965415 /* SelfConfiguringCell.swift */,
+				C215324225029D01005DE306 /* AuthNavigatingDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -400,6 +417,7 @@
 				C2589CCB24F2B4BE00ED3A5C /* SignUpViewController.swift in Sources */,
 				C2CCB1ED24FAB73D00965415 /* SelfConfiguringCell.swift in Sources */,
 				C2CCB1EB24FAB64600965415 /* ActiveChatCell.swift in Sources */,
+				C22CA39D2502890900D890A8 /* AuthError.swift in Sources */,
 				C236ED7A24F0392B00FC7C41 /* AppDelegate.swift in Sources */,
 				C21535D624F4290C00B3A262 /* PeopleViewController.swift in Sources */,
 				C263B47824F3EB7E00E22835 /* SetupProfileViewController.swift in Sources */,
@@ -411,12 +429,14 @@
 				C2388AB625023AF900952DBC /* ChatRequestViewController.swift in Sources */,
 				C20B827324F2945100D5967B /* ButtonFormView.swift in Sources */,
 				C2A250D924F2893400231064 /* UILabel + Extension.swift in Sources */,
+				C215324325029D01005DE306 /* AuthNavigatingDelegate.swift in Sources */,
 				C2814D9924FECDD000B4F9B8 /* LetterChat.swift in Sources */,
 				C2CCB1F324FAB7B100965415 /* GradientView.swift in Sources */,
 				C2A250DB24F28A4E00231064 /* UIImageView + Extension.swift in Sources */,
 				C29316D22501222000AF1B63 /* UIView + Extension.swift in Sources */,
 				C23B142A24F9448400C03635 /* Bundle & Decodable.swift in Sources */,
 				C2F151562502615C0088755D /* AuthViewController.swift in Sources */,
+				C22CA39B2502883B00D890A8 /* Validators.swift in Sources */,
 				C2A1DC1C24F3FBCE00E697AD /* SegmentedControl + Extension.swift in Sources */,
 				C2814D9D24FEDAFF00B4F9B8 /* UserCell.swift in Sources */,
 				C2814D9F24FEDC9100B4F9B8 /* UIViewController + Extension.swift in Sources */,

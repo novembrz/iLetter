@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
     let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
     let loginButton = UIButton(title: "Login", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
     let signupButton = UIButton()
+    
+    weak var delegate: AuthNavigatingDelegate?
 
     
     override func viewDidLoad() {
@@ -38,7 +40,9 @@ class LoginViewController: UIViewController {
         
         setupConstraints()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
+    
     
     @objc private func loginButtonTapped() {
         AuthService.shared.login(email: emailTF.text, password: passwordTF.text) { (result) in
@@ -49,6 +53,12 @@ class LoginViewController: UIViewController {
             case .failure(let error):
                 self.createAlert(with: "Error!", message: error.localizedDescription)
             }
+        }
+    }
+    
+    @objc private func signupButtonTapped(){
+        dismiss(animated: true) {
+            self.delegate?.toSignUpVC()
         }
     }
     
@@ -82,7 +92,7 @@ extension LoginViewController {
         
         
         NSLayoutConstraint.activate([
-            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -91,13 +101,13 @@ extension LoginViewController {
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 80),
+            stackView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 75),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
         NSLayoutConstraint.activate([
-            signupView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
+            signupView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
             signupView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             signupView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])

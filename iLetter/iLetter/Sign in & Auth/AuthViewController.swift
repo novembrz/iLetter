@@ -25,6 +25,9 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginVC.delegate = self
+        signUpVC.delegate = self
 
         googleButton.setGoogleIcon()
         view.backgroundColor = .white
@@ -73,6 +76,19 @@ extension AuthViewController {
         ])
     }
 }
+
+// MARK: - AuthNavigatingDelegate
+
+extension AuthViewController: AuthNavigatingDelegate{
+    func toSignUpVC() {
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
+    func toLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+}
+
 
 // MARK: - SwiftUI
 
