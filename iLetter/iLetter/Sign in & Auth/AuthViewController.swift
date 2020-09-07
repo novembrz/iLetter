@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
     let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"), contentMode: .scaleAspectFit)
     
-    let googleLabel = UILabel(text: "Get started with")
+    let socialLabel = UILabel(text: "Get started with")
     let emailLabel = UILabel(text: "Or sign up with")
     let alreadyOnboardLabel = UILabel(text: "Alerady onboard?")
     
     let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
+    let facebookButton = UIButton(title: "Facebook", backgroundColor: .white, titleColor: .black, isShadow: true)
     let emailButton = UIButton(title: "Email", backgroundColor: .buttonDark(), titleColor: .white, isShadow: false)
     let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .buttonGreen(), isShadow: true)
+    
         
     let signUpVC = SignUpViewController()
     let loginVC = LoginViewController()
@@ -28,6 +31,9 @@ class AuthViewController: UIViewController {
         
         loginVC.delegate = self
         signUpVC.delegate = self
+        
+        GIDSignIn.sharedInstance()?.delegate = self
+        
 
         googleButton.setGoogleIcon()
         view.backgroundColor = .white
@@ -35,6 +41,7 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
     }
     
     @objc private func emailButtonTapped() {
@@ -43,6 +50,11 @@ class AuthViewController: UIViewController {
     
     @objc private func loginButtonTapped() {
         present(loginVC, animated: true, completion: nil)
+    }
+    
+    @objc private func googleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
 
 }
@@ -53,11 +65,21 @@ extension AuthViewController {
     
     private func setupConstraints() {
         
-        let googleView = ButtonFormView(label: googleLabel, button: googleButton)
+        socialLabel.translatesAutoresizingMaskIntoConstraints = false
+        facebookButton.translatesAutoresizingMaskIntoConstraints = false
+        googleButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let socialStackView = UIStackView(arrangedSubviews: [googleButton, facebookButton], axis: .horizontal, spacing: 7)
+        socialStackView.translatesAutoresizingMaskIntoConstraints = false
+        socialStackView.distribution = .fillEqually
+        
+        let socialView = UIStackView(arrangedSubviews: [socialLabel, socialStackView], axis: .vertical, spacing: 20)
+        
+        
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
         let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
     
-        let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spacing: 40)
+        let stackView = UIStackView(arrangedSubviews: [socialView, emailView, loginView], axis: .vertical, spacing: 50)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -65,12 +87,16 @@ extension AuthViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            googleButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 80),
+            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 60),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
@@ -88,6 +114,33 @@ extension AuthViewController: AuthNavigatingDelegate{
         present(loginVC, animated: true, completion: nil)
     }
 }
+
+
+// MARK: - Google SignInDelegate
+
+extension AuthViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        AuthService.shared.googleSignIn(user: user, error: error) { (result) in
+            switch result{
+            case .success(_):
+                self.createAlert(with: "Successful!", message: "You are registered!") {
+                    let mainTBC = MainTabBarController()
+                    mainTBC.modalPresentationStyle = .fullScreen
+                    self.present(mainTBC, animated: true, completion: nil)
+                }
+                
+            case .failure(let error):
+                self.createAlert(with: "Error!", message: error.localizedDescription)
+            }
+        }
+    }
+}
+
+
+// MARK: - FB LoginButtonDelegate
+
+
 
 
 // MARK: - SwiftUI

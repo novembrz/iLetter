@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
         AuthService.shared.register(email: emailTF.text, password: passwordTF.text, confirmPassword: confirmPasswordTF.text) { (result) in
             
             switch result{
-            case .success(let user):
+            case .success(_):
                 self.createAlert(with: "Successful!", message: "You are registered!") {
                     self.present(SetupProfileViewController(), animated: true, completion: nil)
                 }

@@ -47,9 +47,9 @@ class LoginViewController: UIViewController {
     @objc private func loginButtonTapped() {
         AuthService.shared.login(email: emailTF.text, password: passwordTF.text) { (result) in
             switch result{
-            case .success(let user):
+            case .success(_):
                 self.createAlert(with: "Successful!", message: "You are sign in!")
-                print(user.email)
+                
             case .failure(let error):
                 self.createAlert(with: "Error!", message: error.localizedDescription)
             }

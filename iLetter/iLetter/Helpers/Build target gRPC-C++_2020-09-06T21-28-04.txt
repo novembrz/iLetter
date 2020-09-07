@@ -1,0 +1,8 @@
+
+Showing All Messages
+
+Build target gRPC-C++ of project Pods with configuration Debug
+warning: no rule to process file '/Users/dariya/Documents/NewNetAlamofire/Pods/gRPC-C++/third_party/upb/upb/port_def.inc' of type 'sourcecode.pascal' for architecture 'x86_64' (in target 'gRPC-C++' from project 'Pods')
+warning: no rule to process file '/Users/dariya/Documents/NewNetAlamofire/Pods/gRPC-C++/third_party/upb/upb/port_undef.inc' of type 'sourcecode.pascal' for architecture 'x86_64' (in target 'gRPC-C++' from project 'Pods')
+
+

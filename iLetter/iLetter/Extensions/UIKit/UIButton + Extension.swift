@@ -42,8 +42,8 @@ extension UIButton {
         self.addSubview(googleLogo)
         
         NSLayoutConstraint.activate([
-            googleLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            googleLogo.topAnchor.constraint(equalTo: self.topAnchor, constant: 21)
+            googleLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 14),
+            googleLogo.topAnchor.constraint(equalTo: self.topAnchor, constant: 14)
         ])
         
     }
